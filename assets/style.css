@@ -1,0 +1,20 @@
+body {
+  background-image: url("/assets/images/tarot\ background.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+}
+nav {
+  color: rgb(255, 244, 254);
+  background-color: rgba(85, 72, 105, 0.955);
+  padding: 1em;
+}
+nav h1 {
+  font-weight: 800;
+  letter-spacing: 3px;
+  font-size: 48px;
+}
+
+nav h2 {
+  font-weight: 500;
+}
