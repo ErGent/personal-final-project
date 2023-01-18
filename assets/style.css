@@ -41,3 +41,6 @@ img {
   max-height: 100%;
   max-width: auto;
 }
+img:hover {
+  transform: scale(1.25);
+}
