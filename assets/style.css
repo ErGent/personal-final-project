@@ -2,13 +2,13 @@ body {
   background-image: url("/assets/images/tarot\ background.jpg");
   background-attachment: fixed;
   background-size: cover;
-  height: 100%;
 }
 nav {
   color: bisque;
   background-color: rgba(68, 63, 75, 0.955);
   padding: 1rem;
   border: 1rem solid rgba(243, 210, 142, 0.355);
+  border-radius: 25px;
 }
 nav h1 {
   font-weight: 400;
@@ -33,4 +33,11 @@ a {
 }
 a :hover {
   font-weight: bold;
+}
+.card-div {
+  max-height: 25vh;
+}
+img {
+  max-height: 100%;
+  max-width: auto;
 }
