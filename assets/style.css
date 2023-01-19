@@ -40,6 +40,7 @@ a :hover {
 img {
   max-height: 100%;
   max-width: auto;
+  transition: transform 0.5s;
 }
 img:hover {
   transform: scale(1.25);
