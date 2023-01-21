@@ -3,21 +3,21 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
-nav {
+#logo {
   color: bisque;
   background-color: rgba(68, 63, 75, 0.955);
   padding: 1rem;
   border: 1rem solid rgba(243, 210, 142, 0.355);
   border-radius: 25px;
 }
-nav h1 {
+#logo h1 {
   font-weight: 400;
   letter-spacing: 3px;
   font-size: 48px;
   font-family: "sacramento";
 }
 
-nav h2 {
+#logo h2 {
   font-weight: 500;
   font-family: "amatic sc";
 }
@@ -43,5 +43,18 @@ img {
   transition: transform 0.5s;
 }
 img:hover {
-  transform: scale(1.25);
+  transform: scale(1.05);
+}
+#play {
+  background-color: white;
+}
+
+#collapseExample {
+  position: fixed;
+  top: 350px;
+  left: 300px;
+  z-index: 100;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 600px;
 }
