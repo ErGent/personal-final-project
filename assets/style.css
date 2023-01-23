@@ -3,6 +3,26 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+h3 {
+  font-size: 2rem;
+  font-family: "amatic sc";
+}
+
+a {
+  text-decoration: none;
+}
+
+a :hover {
+  font-weight: bold;
+}
+
+button {
+  float: right;
+}
+.Osho-span {
+  font-weight: bold;
+}
+
 #logo {
   color: bisque;
   background-color: rgba(68, 63, 75, 0.955);
@@ -21,40 +41,65 @@ body {
   font-weight: 500;
   font-family: "amatic sc";
 }
-h3 {
-  font-size: 2rem;
-  font-family: "amatic sc";
-}
+
 #choiceBar {
   border: 2px solid rgba(246, 217, 159, 0.355);
 }
-a {
-  text-decoration: none;
+
+.layout-style {
+  width: 50%;
+  height: 500px;
+  margin: 0 auto;
+  position: fixed;
+  top: 50%;
+  left: 25%;
+  margin-left: 0%;
+  margin-top: -125px;
+  z-index: 100;
+  color: bisque;
+  border: 3px solid rgba(246, 217, 159, 0.355);
+  background-color: rgba(66, 66, 68, 0.98);
+  font-size: 14px;
 }
-a :hover {
+.close {
+  font-weight: lighter;
+  font-style: italic;
+}
+.cardTitle {
   font-weight: bold;
+  font-size: 18px;
 }
 .card-div {
   max-height: 25vh;
 }
-img {
+.layoutImg {
   max-height: 100%;
   max-width: auto;
   transition: transform 0.5s;
 }
-img:hover {
+.layoutImg:hover {
   transform: scale(1.05);
 }
-#play {
-  background-color: white;
-}
 
-#collapseExample {
+/*#collapseExample {
+   width: 600px;
   position: fixed;
+ left: 300px;
   top: 350px;
-  left: 300px;
+ 
   z-index: 100;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
-  width: 600px;
+ 
+}*/
+
+.card-body {
+  position: relative;
+  overflow-y: scroll;
+  height: 490px;
+  width: 100%;
+}
+.bigCard {
+  padding-bottom: 2px;
+  max-height: 495px;
 }
