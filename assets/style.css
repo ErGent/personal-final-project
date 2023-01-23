@@ -19,7 +19,7 @@ a :hover {
 button {
   float: right;
 }
-span {
+.Osho-span {
   font-weight: bold;
 }
 
@@ -46,7 +46,7 @@ span {
   border: 2px solid rgba(246, 217, 159, 0.355);
 }
 
-#collapseExample {
+.layout-style {
   width: 50%;
   height: 500px;
   margin: 0 auto;
@@ -56,13 +56,19 @@ span {
   margin-left: 0%;
   margin-top: -125px;
   z-index: 100;
-
   color: bisque;
   border: 3px solid rgba(246, 217, 159, 0.355);
   background-color: rgba(66, 66, 68, 0.98);
   font-size: 14px;
 }
-
+.close {
+  font-weight: lighter;
+  font-style: italic;
+}
+.cardTitle {
+  font-weight: bold;
+  font-size: 18px;
+}
 .card-div {
   max-height: 25vh;
 }
@@ -95,4 +101,5 @@ span {
 }
 .bigCard {
   padding-bottom: 2px;
+  max-height: 495px;
 }
