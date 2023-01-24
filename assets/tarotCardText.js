@@ -253,6 +253,7 @@ const tarotCards = [
   },
   {
     name: "King of Cups: Healing",
+
     description:
       "<p>It is a time when the deeply buried wounds of the past are coming to the surface, ready and available to be healed. The figure in this card is naked, vulnerable, open to the loving touch of existence. The aura around his body is full of light, and the quality of relaxation, caring and love that surrounds him is dissolving his struggle and suffering. Lotuses of light appear on his physical body, and around the subtle energy bodies that healers say surround each of us. In each of these subtle layers appears a healing crystal or pattern.</p><p>When we are under the healing influence of the King of Water we are no longer hiding from ourselves or others. In this attitude of openness and acceptance we can be healed, and help others also to be healthy and whole.</p>",
     Osho: "<span>Osho's Teachings</span><p>No, you carry your wound. With the ego your whole being is a wound. And you carry it around. Nobody is interested in hurting you, nobody is positively waiting to hurt you; everybody is engaged in safeguarding his own wound. Who has got the energy?But still it happens, because you are so ready to be wounded, so ready, just waiting on the brink for anything. Youcannot touch a man of Tao. Why?--because there is no one to be touched. There is no wound. He is healthy, healed, whole. This word 'whole' is beautiful. The word 'heal' comes from the whole, and the word 'holy' also comes from the whole. He is whole, healed, holy.Be aware of your wound. Don't help it to grow, let it be healed; and it will be healed only when you move to the roots. The less the head, the more the wound will heal; with no head there is no wound. Live a headless life. Move as a total being, and accept things. Just for twenty-four hours, try it--total acceptance, whatsoever happens. Someone insults you, accept it, don't react, and see what happens. Suddenly you will feel an energy flowing in you that you have not felt before.</p>",
@@ -275,5 +276,50 @@ const tarotCards = [
     description: "<p></p>",
     Osho: "<span>Osho's Teachings</span><p></p>",
     image: "",
+  },
+];
+
+const diamondLayout = [
+  {
+    position: "Central",
+    description: "The Issue",
+  },
+  {
+    position: "Left",
+    description: "Internal influence that you are unable to see",
+  },
+  {
+    position: "Right",
+    description: "External influence of which you are aware",
+  },
+  {
+    position: "Bottom",
+    description: "What is needed for resolution",
+  },
+  {
+    position: "Top",
+    description: "Resolution: the Understanding",
+  },
+];
+
+const singleCardMeditation = [
+  {
+    position: "Central",
+    description: "Your Insight",
+  },
+];
+
+const pastPresentFuture = [
+  {
+    position: "Left",
+    description: "The Past",
+  },
+  {
+    position: "Center",
+    description: "The Present",
+  },
+  {
+    position: "Future",
+    description: "The Future",
   },
 ];
