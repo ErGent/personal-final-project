@@ -278,3 +278,48 @@ const tarotCards = [
     image: "",
   },
 ];
+
+const diamondLayout = [
+  {
+    position: "Central",
+    description: "The Issue",
+  },
+  {
+    position: "Left",
+    description: "Internal influence that you are unable to see",
+  },
+  {
+    position: "Right",
+    description: "External influence of which you are aware",
+  },
+  {
+    position: "Bottom",
+    description: "What is needed for resolution",
+  },
+  {
+    position: "Top",
+    description: "Resolution: the Understanding",
+  },
+];
+
+const singleCardMeditation = [
+  {
+    position: "Central",
+    description: "Your Insight",
+  },
+];
+
+const pastPresentFuture = [
+  {
+    position: "Left",
+    description: "The Past",
+  },
+  {
+    position: "Center",
+    description: "The Present",
+  },
+  {
+    position: "Future",
+    description: "The Future",
+  },
+];
