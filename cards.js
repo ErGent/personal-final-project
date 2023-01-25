@@ -55,6 +55,112 @@ class Deck {
             </div>`;
   };
 
+  singleCardLayoutHtml(c1) {
+    return `<div class="container justify-content-center my-5 py-5 rounded"
+            style="background-color: rgba(245, 237, 220, 0.2)" id="singleCardLayout">
+            <div class="row">
+                <div class="col-5"></div>
+                <!-- top card-->
+                ${this.createCardHtml(c1.image, c1.name, c1.id)}
+                ${this.createDescriptionHtml(
+                  c1.name,
+                  c1.image,
+                  c1.id,
+                  c1.description,
+                  c1.Osho,
+                  singleCardMeditation[0].position,
+                  singleCardMeditation[0].description
+                )}`;
+  }
+  singleCardLayout() {
+    this.cards = tarotCards;
+
+    this.position = singleCardMeditation.position;
+    console.log(this.position);
+
+    this.description = singleCardMeditation.description;
+    console.log(this.description);
+    this.usedCards = [];
+
+    this.cardShuffle();
+
+    let l = this.singleCardLayoutHtml(this.usedCards[0]);
+
+    document.getElementById("insertAfter").insertAdjacentHTML("afterend", l);
+  }
+
+  ppfLayoutHTML(c1, c2, c3) {
+    return `<div class="container justify-content-center my-5 py-5 rounded"
+    style = "background-color: rgba(245, 237, 220, 0.2)" id = "ppfLayout" >
+              <div class="row">
+                <!-- start left middle card-->
+                <div class="col-2"> </div>
+                ${this.createCardHtml(c1.image, c1.name, c1.id)}
+                <div class="col-1 "> </div>
+                <!-- end left middle card-->
+                     <!--start mid card-->
+                ${this.createCardHtml(c2.image, c2.name, c2.id)}
+                <!--end mid card -->
+                 <div class="col-1 "> </div>                 
+                <!-- middle right card start -->
+                ${this.createCardHtml(c3.image, c3.name, c3.id)}
+                <!-- middle right card end -->
+                <div class="col-2 ">
+                </div>
+            </div>
+
+     ${this.createDescriptionHtml(
+       c1.name,
+       c1.image,
+       c1.id,
+       c1.description,
+       c1.Osho,
+       pastPresentFuture[0].position,
+       pastPresentFuture[0].description
+     )}
+            ${this.createDescriptionHtml(
+              c2.name,
+              c2.image,
+              c2.id,
+              c2.description,
+              c2.Osho,
+              pastPresentFuture[1].position,
+              pastPresentFuture[1].description
+            )}
+            ${this.createDescriptionHtml(
+              c3.name,
+              c3.image,
+              c3.id,
+              c3.description,
+              c3.Osho,
+              pastPresentFuture[2].position,
+              pastPresentFuture[2].description
+            )}`;
+  }
+
+  ppfLayout() {
+    this.cards = tarotCards;
+
+    this.position = pastPresentFuture.position;
+    console.log(this.position);
+
+    this.positionInsight = pastPresentFuture.description;
+
+    this.usedCards = [];
+
+    this.cardShuffle();
+    this.cardShuffle();
+    this.cardShuffle();
+
+    let l = this.ppfLayoutHTML(
+      this.usedCards[0],
+      this.usedCards[1],
+      this.usedCards[2]
+    );
+
+    document.getElementById("insertAfter").insertAdjacentHTML("afterend", l);
+  }
+
   diamondLayoutHtml(c1, c2, c3, c4, c5) {
     return ` <div class="container justify-content-center my-5 py-5 rounded"
             style="background-color: rgba(245, 237, 220, 0.2)" id="diamondLayout">
