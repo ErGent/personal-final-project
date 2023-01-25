@@ -34,7 +34,6 @@ class Deck {
     position,
     positionInsight
   ) => {
-    console.log("osho", osho);
     return `<div class="card col-s collapse rounded mb-3 layout-style" id="collapseExample${id}" data-bs-toggle="collapse"
                 data-bs-target="#collapseExample${id}" aria-expanded="false" aria-controls="collapseExample${id}">
                 <div class="row g-0">
