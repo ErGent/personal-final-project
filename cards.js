@@ -1,74 +1,82 @@
-class Card {
-  constructor(image, id) {
-    this.image = image;
-    this.id = id;
+class Deck {
+  constructor() {
+    this.cards = [];
+    this.usedCards = [];
   }
-}
 
-const createCardHtml = (image, id) => {
-  return `<div class="col-2 my-4 card-div">
+  cardShuffle() {
+    let randomIdx = Math.floor(Math.random() * this.cards.length);
+    console.log(randomIdx);
+    let randCard = this.cards.splice(randomIdx, 1)[0];
+    this.usedCards.push(randCard);
+
+    return randomIdx;
+  }
+
+  createCardHtml = (image, name, id) => {
+    console.log("id", id);
+    //image starting out as card-back, can I click and have it give first card?
+    return `<div class="col-2 my-4 card-div">
                     <img src="${image}" class="img-thumbnail layoutImg" alt="..."
-                        data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false"
-                        aria-controls="collapseExample2">
+                        data-bs-toggle="collapse" data-bs-target="#collapseExample${id}" aria-expanded="false"
+                        aria-controls="collapseExample${id}">
                 </div>
     
 `;
-};
+  };
 
-class Description {
-  constructor(name, image, id, description, osho) {
-    (this.name = name),
-      (this.image = image),
-      (this.id = id),
-      (this.description = description),
-      (this.osho = osho);
-  }
-}
-
-const createDescriptionHtml = (name, image, id, description, osho) => {
-  return `<div class="card col-s collapse rounded mb-3 layout-style" id="${id}" data-bs-toggle="collapse"
-                data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
+  createDescriptionHtml = (
+    name,
+    image,
+    id,
+    description,
+    osho,
+    position,
+    positionInsight
+  ) => {
+    console.log("osho", osho);
+    return `<div class="card col-s collapse rounded mb-3 layout-style" id="collapseExample${id}" data-bs-toggle="collapse"
+                data-bs-target="#collapseExample${id}" aria-expanded="false" aria-controls="collapseExample${id}">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="${image}" class="rounded img bigCard">
+                        <img src="${image}" class="rounded img-responsive bigCard">
                     </div>
                     <div class="col-md-8 ">
-                        <div class="card-body"> <span class="mx-3 my-2 float-end close">Click anywhere to
+                        <div class="card-body mx-2"> <span class="mx-3 my-2 float-end close">Click here to
                                 close</span><br>
 
-                            <span class="cardTitle mx-3">${name}</span>
-
-                            <p class="mx-3 my-2 fixed-content">${description}</p>
-                            <span class="mx-3 my-2 fixed-content Osho-span">Osho's Teaching</span>
-                            <p class="mx-3 my-2 fixed-content">${osho}</p>
+                            <span class="cardTitle">${name}</span><br><br>
+                             <span class="cardPosition">${position}: ${positionInsight}</span>
+                            <p class=" my-2 fixed-content">${description}</p>
+                            <span class="my-2 fixed-content Osho-span">Osho's Teaching</span>
+                            <p class=" my-2 fixed-content">${osho}</p>
                         </div>
                     </div>
                 </div>
             </div>`;
-};
+  };
 
-const diamondLayoutHtml = () => {
-  return ` <div class="container justify-content-center my-5 py-5 rounded"
+  diamondLayoutHtml(c1, c2, c3, c4, c5) {
+    return ` <div class="container justify-content-center my-5 py-5 rounded"
             style="background-color: rgba(245, 237, 220, 0.2)" id="diamondLayout">
             <div class="row">
                 <div class="col-5"></div>
                 <!-- top card-->
-                ${createCardHtml}
+                ${this.createCardHtml(c4.image, c4.name, c4.id)}
             </div>
             <!-- top card end-->
             <div class="row">
                 <!-- start left middle card-->
                 <div class="col-2"> </div>
-                ${createCardHtml}
+                ${this.createCardHtml(c2.image, c2.name, c2.id)}
                 <div class="col-1 "> </div>
                 <!-- end left middle card-->
-                    <div class="col-1 "> </div>
                      <!--start mid card-->
-                ${createCardHtml}
+                ${this.createCardHtml(c1.image, c1.name, c1.id)}
                 <!--end mid card -->
                  <div class="col-1 "> </div>                 
                 <!-- middle right card start -->
-                ${createCardHtml}
+                ${this.createCardHtml(c3.image, c3.name, c3.id)}
                 <!-- middle right card end -->
                 <div class="col-2 ">
                 </div>
@@ -76,11 +84,81 @@ const diamondLayoutHtml = () => {
             <!--bottom card-->
             <div class="row">
                 <div class="col-5"></div>
-                ${createCardHtml}
+                ${this.createCardHtml(c5.image, c5.name, c5.id)}
             </div>
 
-           ${createDescriptionHtml}
-        ${createDescriptionHtml}
-        ${createDescriptionHtml}
-        ${createDescriptionHtml}`;
-};
+            ${this.createDescriptionHtml(
+              c1.name,
+              c1.image,
+              c1.id,
+              c1.description,
+              c1.Osho,
+              diamondLayout[0].position,
+              diamondLayout[0].positionInsight
+            )}
+            ${this.createDescriptionHtml(
+              c2.name,
+              c2.image,
+              c2.id,
+              c2.description,
+              c2.Osho,
+              diamondLayout[1].position,
+              diamondLayout[1].positionInsight
+            )}
+            ${this.createDescriptionHtml(
+              c3.name,
+              c3.image,
+              c3.id,
+              c3.description,
+              c3.Osho,
+              diamondLayout[2].position,
+              diamondLayout[2].positionInsight
+            )}
+            ${this.createDescriptionHtml(
+              c4.name,
+              c4.image,
+              c4.id,
+              c4.description,
+              c4.Osho,
+              diamondLayout[4].position,
+              diamondLayout[4].positionInsight
+            )}
+            ${this.createDescriptionHtml(
+              c5.name,
+              c5.image,
+              c5.id,
+              c5.description,
+              c5.Osho,
+              diamondLayout[3].position,
+              diamondLayout[3].positionInsight
+            )}
+
+       `;
+  }
+  doDiamond() {
+    this.cards = tarotCards;
+
+    this.position = diamondLayout.position;
+    console.log(this.position);
+
+    this.positionInsight = diamondLayout[1].positionInsight;
+    console.log(this.positionInsight);
+    this.usedCards = [];
+
+    this.cardShuffle();
+    this.cardShuffle();
+    this.cardShuffle();
+    this.cardShuffle();
+    this.cardShuffle();
+
+    let l = this.diamondLayoutHtml(
+      this.usedCards[0],
+      this.usedCards[1],
+      this.usedCards[2],
+      this.usedCards[3],
+      this.usedCards[4]
+    );
+
+    document.getElementById("insertAfter").insertAdjacentHTML("afterend", l);
+  }
+}
