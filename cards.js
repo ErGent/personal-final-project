@@ -91,8 +91,20 @@ class Deck {
     this.cardShuffle();
 
     let l = this.singleCardLayoutHtml(this.usedCards[0]);
+    let insert = document.getElementById("insertDiv");
+    if (insert.childNodes.length == 0) {
+      insert.insertAdjacentHTML("afterbegin", l);
+    } else {
+      while (insert.firstChild) {
+        insert.removeChild(insert.firstChild);
+      }
+      insert.insertAdjacentHTML("afterbegin", l);
+    }
 
-    document.getElementById("insertAfter").insertAdjacentHTML("afterend", l);
+    // insert.insertAdjacentHTML("afterend", l);
+    //insert = ""
+    //? insert.insertAdjacentHTML("afterend", l) // trying to do ternary so that if there's nothing on the board, continue, else clear board
+    //: insert.insertAdjacentHTML("afterend", "");
   }
 
   ppfLayoutHTML(c1, c2, c3) {
@@ -163,8 +175,17 @@ class Deck {
       this.usedCards[1],
       this.usedCards[2]
     );
-
-    document.getElementById("insertAfter").insertAdjacentHTML("afterend", l);
+    let insert = document.getElementById("insertDiv");
+    if (insert.childNodes.length == 0) {
+      insert.insertAdjacentHTML("afterbegin", l);
+    } else {
+      while (insert.firstChild) {
+        insert.removeChild(insert.firstChild);
+      }
+      insert.insertAdjacentHTML("afterbegin", l);
+    }
+    this.usedCards = [];
+    // document.getElementById("insertAfter").insertAdjacentHTML("afterend", l);
   }
 
   diamondLayoutHtml(c1, c2, c3, c4, c5) {
@@ -250,10 +271,9 @@ class Deck {
     this.cards = tarotCards;
 
     this.position = diamondLayout.position;
-    console.log(this.position);
 
     this.positionInsight = diamondLayout[1].positionInsight;
-    console.log(this.positionInsight);
+
     this.usedCards = [];
 
     this.cardShuffle();
@@ -270,6 +290,14 @@ class Deck {
       this.usedCards[4]
     );
 
-    document.getElementById("insertAfter").insertAdjacentHTML("afterend", l);
+    let insert = document.getElementById("insertDiv");
+    if (insert.childNodes.length == 0) {
+      insert.insertAdjacentHTML("afterbegin", l);
+    } else {
+      while (insert.firstChild) {
+        insert.removeChild(insert.firstChild);
+      }
+      insert.insertAdjacentHTML("afterbegin", l);
+    }
   }
 }
