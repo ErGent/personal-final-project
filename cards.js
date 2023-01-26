@@ -29,8 +29,10 @@ class Deck {
     name,
     image,
     id,
+
     description,
     osho,
+
     position,
     positionInsight
   ) => {
@@ -45,9 +47,11 @@ class Deck {
                                 close</span><br>
 
                             <span class="cardTitle">${name}</span><br><br>
-                             <span class="cardPosition">${position}: ${positionInsight}</span>
+                             <span class="cardPosition">${position}: ${positionInsight}</span><br><br>
+
+                             <span class="my-2 fixed-content Osho-span">Commentary</span>
                             <p class=" my-2 fixed-content">${description}</p>
-                            <span class="my-2 fixed-content Osho-span">Osho's Teaching</span>
+                            <span class="my-2 fixed-content Osho-span">Meaning</span>
                             <p class=" my-2 fixed-content">${osho}</p>
                         </div>
                     </div>
@@ -60,8 +64,10 @@ class Deck {
             style="background-color: rgba(245, 237, 220, 0.2)" id="singleCardLayout">
             <div class="row">
                 <div class="col-5"></div>
+                
                 <!-- top card-->
                 ${this.createCardHtml(c1.image, c1.name, c1.id)}
+                </div>
                 ${this.createDescriptionHtml(
                   c1.name,
                   c1.image,
@@ -162,7 +168,7 @@ class Deck {
   }
 
   diamondLayoutHtml(c1, c2, c3, c4, c5) {
-    return ` <div class="container justify-content-center my-5 py-5 rounded"
+    return ` <div id="layoutContainer"  class="container justify-content-center my-5 py-5 rounded"
             style="background-color: rgba(245, 237, 220, 0.2)" id="diamondLayout">
             <div class="row">
                 <div class="col-5"></div>
@@ -240,7 +246,7 @@ class Deck {
 
        `;
   }
-  doDiamond() {
+  diamondLayout() {
     this.cards = tarotCards;
 
     this.position = diamondLayout.position;
