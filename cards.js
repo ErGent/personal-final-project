@@ -13,6 +13,12 @@ class Deck {
     return randomIdx;
   }
 
+  resetDeck() {
+    for (let i = 0; i < this.usedCards.length; i++) {
+      this.cards.push(this.usedCards[i]);
+    }
+  }
+
   createCardHtml = (image, name, id) => {
     console.log("id", id);
     //image starting out as card-back, can I click and have it give first card?
@@ -29,10 +35,8 @@ class Deck {
     name,
     image,
     id,
-
     description,
     osho,
-
     position,
     positionInsight
   ) => {
@@ -79,6 +83,7 @@ class Deck {
                 )}`;
   }
   singleCardLayout() {
+    this.resetDeck();
     this.cards = tarotCards;
 
     this.position = singleCardMeditation.position;
@@ -157,6 +162,7 @@ class Deck {
   }
 
   ppfLayout() {
+    this.resetDeck();
     this.cards = tarotCards;
 
     this.position = pastPresentFuture.position;
@@ -268,6 +274,7 @@ class Deck {
        `;
   }
   diamondLayout() {
+    this.resetDeck();
     this.cards = tarotCards;
 
     this.position = diamondLayout.position;
