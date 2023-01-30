@@ -44,9 +44,9 @@ class Deck {
                 data-bs-target="#collapseExample${id}" aria-expanded="false" aria-controls="collapseExample${id}">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="${image}" class="rounded img-responsive bigCard">
+                        <img src="${image}" class="rounded img-responsive bigCard" class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
                     </div>
-                    <div class="col-md-8 ">
+                    <div class="col-md-8 col-xs-12">
                         <div class="card-body mx-2"> <span class="mx-3 my-2 float-end close">Click here to
                                 close</span><br>
 
