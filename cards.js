@@ -24,8 +24,8 @@ class Deck {
     //image starting out as card-back, can I click and have it give first card?
     return `<div class="col-2 my-4 card-div">
                     <img src="${image}" class="img-thumbnail layoutImg" alt="..."
-                        data-bs-toggle="collapse" data-bs-target="#collapseExample${id}" aria-expanded="false"
-                        aria-controls="collapseExample${id}">
+                        data-bs-toggle="modal"href="#exampleModalToggle${id}" aria-expanded="false"
+                        aria-controls="collapseExample${id}"> 
                 </div>
     
 `;
@@ -40,7 +40,7 @@ class Deck {
     position,
     positionInsight
   ) => {
-    return `<div class="card col-s collapse rounded mb-3 layout-style" id="collapseExample${id}" data-bs-toggle="collapse"
+    /*`<div class="card col-s collapse rounded mb-3 layout-style" id="collapseExample${id}" data-bs-toggle="collapse"
                 data-bs-target="#collapseExample${id}" aria-expanded="false" aria-controls="collapseExample${id}">
                 <div class="row g-0">
                     <div class="col-md-4">
@@ -60,7 +60,47 @@ class Deck {
                         </div>
                     </div>
                 </div>
-            </div>`;
+            </div>`</br>*/
+
+    return `<div class="modal fade" id="exampleModalToggle${id}" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center">
+      <img src="${image}" class="rounded img-responsive bigCard" class="col-xs-12 col-md-6 col-lg-4 col-xl-3" >
+        <h5 class="modal-title" id="exampleModalToggleLabel${id}"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <span class="cardPosition"> <em>${name}</em> <br> ${position} </br>Represents: <em>${positionInsight}</em></span>
+      </div>
+      <div class="modal-footer">
+        <button class="btn link" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Continue to Meaning</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel2">${name}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <span class="cardPosition"><em> ${position}</em>, representing <em>'${positionInsight}'</em></span><br><br>
+
+                             <span class="my-2 fixed-content Osho-span">Commentary</span>
+                            <p class=" my-2 fixed-content">${description}</p>
+                            <span class="my-2 fixed-content Osho-span">Meaning</span>
+                            <p class=" my-2 fixed-content">${osho}</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn link" data-bs-target="#exampleModalToggle${id}" data-bs-toggle="modal" data-bs-dismiss="modal">Back to Picture</button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
   };
 
   singleCardLayoutHtml(c1) {
@@ -70,7 +110,7 @@ class Deck {
                 <div class="col-5"></div>
                 
                 <!-- top card-->
-                ${this.createCardHtml(c1.image, c1.name, c1.id)}
+                ${this.createCardHtml(c1.image, c1.name, c1.id)} 
                 </div>
                 ${this.createDescriptionHtml(
                   c1.name,
@@ -119,7 +159,7 @@ class Deck {
                 <!-- start left middle card-->
                 <div class="col-2"> </div>
                 ${this.createCardHtml(c1.image, c1.name, c1.id)}
-                <div class="col-1 "> </div>
+                <div class="col-1 "></div>
                 <!-- end left middle card-->
                      <!--start mid card-->
                 ${this.createCardHtml(c2.image, c2.name, c2.id)}

@@ -659,7 +659,7 @@ const diamondLayout = [
 
 const singleCardMeditation = [
   {
-    position: "Central",
+    position: "Single Card",
     description: "Your Insight",
   },
 ];
