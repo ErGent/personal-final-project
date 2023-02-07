@@ -22,6 +22,11 @@ button {
 .Osho-span {
   font-weight: bold;
 }
+.modal-content {
+  color: bisque;
+  background-color: rgba(66, 66, 68, 0.98);
+  border: 1px solid rgb(255, 228, 196);
+}
 
 #logo {
   color: bisque;
@@ -64,7 +69,7 @@ button {
   text-shadow: 2px 2px 2px rgb(24, 24, 24);
   margin-top: 1rem;
 }*/
-.layout-style {
+/*.layout-style {
   width: 50%;
   height: 500px;
   margin: 0 auto;
@@ -78,10 +83,11 @@ button {
   border: 3px solid rgba(246, 217, 159, 0.355);
   background-color: rgba(66, 66, 68, 0.98);
   font-size: 14px;
-}
-.close {
+}*/
+.link {
   font-weight: lighter;
   font-style: italic;
+  color: rgba(255, 228, 196, 0.5);
 }
 .cardTitle {
   font-weight: bold;
@@ -98,7 +104,9 @@ button {
 .layoutImg:hover {
   transform: scale(1.05);
 }
-
+.navbar-toggler {
+  color: white;
+}
 /*#collapseExample {
   width: 600px;
   position: fixed;
@@ -108,7 +116,7 @@ button {
   z-index: 100;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
-}*/
+}
 
 .card-body {
   position: relative;
@@ -119,4 +127,4 @@ button {
 .bigCard {
   min-height: 100%;
   max-height: 495px;
-}
+}*/
