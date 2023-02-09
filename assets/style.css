@@ -79,7 +79,7 @@ button {
 
   animation: pulsate 2s ease-out infinite;
 }
-@-webkit-keyframes pulsate {
+@keyframes pulsate {
   0% {
     box-shadow: 0 0 0 rgba(240, 209, 176, 0.6);
   }

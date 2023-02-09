@@ -250,8 +250,8 @@ class Deck {
             <div class="row">
                 <div class="col-5"></div>
                 <!-- top card-->
-<div class="col-2 my-4 card-div" id="four">
-                ${this.createCardHtml(c4.image, c4.name, c4.id, "five")}
+<div class="col-2 my-4 card-div" id="five">
+                ${this.createCardHtml(c4.image, c4.name, c4.id, "")}
                 </div>
             </div>
             <!-- top card end-->
@@ -280,8 +280,8 @@ class Deck {
             <!--bottom card-->
             <div class="row">
                 <div class="col-5"></div>
-                <div class="col-2 my-4 card-div" id="five">
-                ${this.createCardHtml(c5.image, c5.name, c5.id, "")}
+                <div class="col-2 my-4 card-div" id="four">
+                ${this.createCardHtml(c5.image, c5.name, c5.id, "five")}
                 </div>
             </div>
 
