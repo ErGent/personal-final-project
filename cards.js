@@ -68,7 +68,7 @@ class Deck {
       <div class="modal-header justify-content-center">
       <img src="${image}" class="rounded img-responsive bigCard" class="col-xs-12 col-md-6 col-lg-4 col-xl-3" >
         <h5 class="modal-title" id="exampleModalToggleLabel${id}"></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <span class="cardPosition"> <em>${name}</em> <br> ${position} </br>Represents: <em>${positionInsight}</em></span>
@@ -84,7 +84,7 @@ class Deck {
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalToggleLabel2${id}">${name}</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <span class="cardPosition"><em> ${position}</em>, representing <em>'${positionInsight}'</em></span><br><br>
