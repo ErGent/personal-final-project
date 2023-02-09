@@ -19,14 +19,14 @@ class Deck {
     }
   }
 
-  createCardHtml = (image, name, id) => {
+  createCardHtml = (image, name, id, next) => {
     console.log("id", id);
     //image starting out as card-back, can I click and have it give first card?
-    return `<div class="col-2 my-4 card-div">
+    return `
                     <img src="${image}" class="img-thumbnail layoutImg" alt="..."
                         data-bs-toggle="modal"href="#exampleModalToggle${id}" aria-expanded="false"
-                        aria-controls="collapseExample${id}"> 
-                </div>
+                        aria-controls="collapseExample${id}" data-next="${next}" onclick="glowGuide(this)"> 
+                
     
 `;
   };
@@ -108,9 +108,11 @@ class Deck {
             style="background-color: rgba(245, 237, 220, 0.2)" id="singleCardLayout">
             <div class="row">
                 <div class="col-5"></div>
+                <div class="col-2 my-4 card-div" id="single">
                 
                 <!-- top card-->
-                ${this.createCardHtml(c1.image, c1.name, c1.id)} 
+                ${this.createCardHtml(c1.image, c1.name, c1.id, "")} 
+                </div>
                 </div>
                 ${this.createDescriptionHtml(
                   c1.name,
@@ -158,15 +160,21 @@ class Deck {
               <div class="row">
                 <!-- start left middle card-->
                 <div class="col-2"> </div>
-                ${this.createCardHtml(c1.image, c1.name, c1.id)}
+                <div class="col-2 my-4 card-div glow" id="one">
+                ${this.createCardHtml(c1.image, c1.name, c1.id, "two")}
+                </div>
                 <div class="col-1 "></div>
                 <!-- end left middle card-->
                      <!--start mid card-->
-                ${this.createCardHtml(c2.image, c2.name, c2.id)}
+                     <div class="col-2 my-4 card-div" id="two">
+                ${this.createCardHtml(c2.image, c2.name, c2.id, "three")}
+                </div>
                 <!--end mid card -->
                  <div class="col-1 "> </div>                 
                 <!-- middle right card start -->
-                ${this.createCardHtml(c3.image, c3.name, c3.id)}
+                <div class="col-2 my-4 card-div" id="three">
+                ${this.createCardHtml(c3.image, c3.name, c3.id, "")}
+                </div>
                 <!-- middle right card end -->
                 <div class="col-2 ">
                 </div>
@@ -221,6 +229,7 @@ class Deck {
       this.usedCards[1],
       this.usedCards[2]
     );
+
     let insert = document.getElementById("insertDiv");
     if (insert.childNodes.length == 0) {
       insert.insertAdjacentHTML("afterbegin", l);
@@ -231,6 +240,7 @@ class Deck {
       insert.insertAdjacentHTML("afterbegin", l);
     }
     this.usedCards = [];
+
     // document.getElementById("insertAfter").insertAdjacentHTML("afterend", l);
   }
 
@@ -240,21 +250,29 @@ class Deck {
             <div class="row">
                 <div class="col-5"></div>
                 <!-- top card-->
-                ${this.createCardHtml(c4.image, c4.name, c4.id)}
+<div class="col-2 my-4 card-div" id="four">
+                ${this.createCardHtml(c4.image, c4.name, c4.id, "five")}
+                </div>
             </div>
             <!-- top card end-->
             <div class="row">
                 <!-- start left middle card-->
                 <div class="col-2"> </div>
-                ${this.createCardHtml(c2.image, c2.name, c2.id)}
+                <div class="col-2 my-4 card-div" id="two">
+                ${this.createCardHtml(c2.image, c2.name, c2.id, "three")}
+                </div>
                 <div class="col-1 "> </div>
                 <!-- end left middle card-->
                      <!--start mid card-->
-                ${this.createCardHtml(c1.image, c1.name, c1.id)}
+                     <div class="col-2 my-4 card-div glow" id="one">
+                ${this.createCardHtml(c1.image, c1.name, c1.id, "two")}
+                </div>
                 <!--end mid card -->
                  <div class="col-1 "> </div>                 
                 <!-- middle right card start -->
-                ${this.createCardHtml(c3.image, c3.name, c3.id)}
+                <div class="col-2 my-4 card-div" id="three">
+                ${this.createCardHtml(c3.image, c3.name, c3.id, "four")}
+                </div>
                 <!-- middle right card end -->
                 <div class="col-2 ">
                 </div>
@@ -262,7 +280,9 @@ class Deck {
             <!--bottom card-->
             <div class="row">
                 <div class="col-5"></div>
-                ${this.createCardHtml(c5.image, c5.name, c5.id)}
+                <div class="col-2 my-4 card-div" id="five">
+                ${this.createCardHtml(c5.image, c5.name, c5.id, "")}
+                </div>
             </div>
 
             ${this.createDescriptionHtml(
