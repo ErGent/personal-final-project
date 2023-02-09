@@ -32,6 +32,9 @@ function glowGuide(clickedCard) {
   if (nextId == "") {
     return;
   }
+  if (clickedCard.contains("glow" == false)) {
+    return;
+  }
   const nextElement = document.getElementById(nextId);
   console.log(nextElement);
   nextElement.classList.add("glow");
