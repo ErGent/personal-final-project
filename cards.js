@@ -108,7 +108,7 @@ class Deck {
             style="background-color: rgba(245, 237, 220, 0.2)" id="singleCardLayout">
             <div class="row">
                 <div class="col-5"></div>
-                <div class="col-2 my-4 card-div" id="single">
+                <div class="col-2 my-4 card-div glow" id="single">
                 
                 <!-- top card-->
                 ${this.createCardHtml(c1.image, c1.name, c1.id, "")} 
