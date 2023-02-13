@@ -15,6 +15,14 @@ a {
 a :hover {
   font-weight: bold;
 }
+.btn {
+  background-color: rgba(240, 209, 176, 0.5);
+  border: none;
+}
+.btn:hover {
+  background-color: rgba(240, 209, 176, 0.5);
+  transform: scale(1.02);
+}
 
 button {
   float: right;

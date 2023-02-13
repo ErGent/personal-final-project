@@ -74,7 +74,7 @@ class Deck {
         <span class="cardPosition"> <em>${name}</em> <br> ${position} </br>Represents: <em>${positionInsight}</em></span>
       </div>
       <div class="modal-footer">
-        <button class="btn link" data-bs-target="#exampleModalToggle2${id}" data-bs-toggle="modal" data-bs-dismiss="modal">Continue to Meaning</button>
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2${id}" data-bs-toggle="modal" data-bs-dismiss="modal">Continue to Meaning</button>
       </div>
     </div>
   </div>
@@ -95,7 +95,7 @@ class Deck {
                             <p class=" my-2 fixed-content">${osho}</p>
       </div>
       <div class="modal-footer">
-        <button class="btn link" data-bs-target="#exampleModalToggle${id}" data-bs-toggle="modal" data-bs-dismiss="modal">Back to Picture</button>
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle${id}" data-bs-toggle="modal" data-bs-dismiss="modal">Back to Picture</button>
       </div>
     </div>
   </div>
