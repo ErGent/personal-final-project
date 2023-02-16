@@ -11,20 +11,7 @@ function removeShow() {
     nav.classList.remove("show");
   }
 }
-/*function glowGuide() {
-  let start = document.getElementById("one");
-  let two = document.getElementById("two");
-  let three = document.getElementById("three");
-  let four = document.getElementById("four");
-  let five = document.getElementById("five");
-  if (start.classList.contains("glow")) {
-    $(start).removeClass("glow");
-    two.classList.add("glow");
-  } else if (two.classList.contains("glow")) {
-    $(two).removeClass("glow");
-    three.classList.add("glow");
-  }
-}*/
+
 function glowGuide(clickedCard) {
   if (clickedCard.classList.contains("glow" == false)) {
     console.log("what");
